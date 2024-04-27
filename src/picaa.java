@@ -82,11 +82,18 @@ public class picaa {
 	        return "Vārds: "+vards+"\nAdrese: "+adrese+"\nTel. num: "+tel+"\nPica: "+pica;
 	    }
 	}
+	
+	public static void veiktPasutijumu() {
+		/*String vards = JOptionPane.showInputDialog("Ievadiet savu vārdu:");
+        String adrese = JOptionPane.showInputDialog("Ievadiet savu mājas adrese, uz kuru sūtīt:");
+        String telnum = JOptionPane.showInputDialog("Ievadiet savu tel.num:");
+        
+        String[] izmeri = {"20 ∅","30 ∅","50 ∅"};*/
+	}
 
 	public static void main(String[] args) {
 		ImageIcon vikasPizzeria = new ImageIcon(picaa.class.getResource("/img/vikasPizzeria.png"));
 		String izvele;
-		int caseS;
 		String[] saakums = {"Veikt pasūtījumu","Apskatīt pasūtījumus","Apturēt programmu"};
 		
 		JOptionPane.showMessageDialog(null, "", "Laipni lūgti.. ", 
@@ -101,7 +108,7 @@ public class picaa {
     		
     		switch(izvele) {
     		case "Veikt pasūtījumu":
-    			//pasutit();   
+    			veiktPasutijumu();   
     			break;
     			
     		case "Apskatīt pasūtījumus":
