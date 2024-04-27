@@ -17,6 +17,24 @@ public class picaa {
 	        this.sauce = sauce;
 	        this.cena = aprekinatCenu();
 	    }
+
+			private double aprekinatCenu() {
+				double pamatne = 0;
+				switch(izmers) {
+				case "20 ∅":
+					pamatne = 5.0;
+					break;
+				case "30 ∅":
+					pamatne = 7.0;
+					break;
+				case "50 ∅":
+					pamatne = 10.0;
+				}
+				double toppingsPrice = tops.size()*1.0;
+		        double saucesPrice = sauce.size()*0.5;
+		        return pamatne+toppingsPrice+saucesPrice;
+			}
+		
 	    
 	class Pasutijums{
 		private String vards;
@@ -83,5 +101,5 @@ public class picaa {
 		}while(!izvele.equals("Apturēt programmu"));
 
 	}
-
+	}
 }
