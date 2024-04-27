@@ -170,6 +170,19 @@ public class picaa {
         JOptionPane.showMessageDialog(null, "Veicam Jūsu pasūtījumu!", "Vika's Pizzeria.", JOptionPane.INFORMATION_MESSAGE);
 
     }
+    
+    public static void apskatitPas() {
+        if(orders.isEmpty()) {
+        	JOptionPane.showMessageDialog(null, "Nav veikts neviens pasūtījums.");
+        } else {
+        	StringBuilder message = new StringBuilder("Pasūtījumi:\n");
+        	for (Pasutijums order : orders) {
+        		message.append(order).append("\n");
+        }
+        	JOptionPane.showMessageDialog(null, message.toString());
+        }
+    }
+    
     private static ArrayList<Pasutijums> orders = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -193,7 +206,7 @@ public class picaa {
                     break;
 
                 case "Apskatīt pasūtījumus":
-                    //apskatitPas();
+                    apskatitPas();
                     break;
 
                 case "Apturēt programmu":
