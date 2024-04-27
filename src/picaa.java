@@ -6,33 +6,42 @@ import javax.swing.JOptionPane;
 public class picaa {
 	
 	class Pizza {
+		private String picasName;
 	    private String izmers;
 	    private ArrayList<String> tops;
 	    private ArrayList<String> sauce;
-	    private double cena;
+	    private double pamatnesCena;
+	    private double topsCena;
+        private double sauceCena;
 
-	    public Pizza(String izmers, ArrayList<String> tops, ArrayList<String> sauce) {
-	        this.izmers = izmers;
+	    public Pizza(String picasName, String izmers, ArrayList<String> tops, ArrayList<String> sauce) {
+	    	this.picasName = picasName;
+	    	this.izmers = izmers;
 	        this.tops = tops;
 	        this.sauce = sauce;
-	        this.cena = aprekinatCenu();
+	        aprekinatCenu();
 	    }
-			private double aprekinatCenu() {
-				double pamatne = 0;
-				switch(izmers) {
-				case "20 ∅":
-					pamatne = 5.0;
-					break;
-				case "30 ∅":
-					pamatne = 7.0;
-					break;
-				case "50 ∅":
-					pamatne = 10.0;
-				}
-				double toppingsPrice = tops.size()*1.0;
-		        double saucesPrice = sauce.size()*0.5;
-		        return pamatne+toppingsPrice+saucesPrice;
-			}
+	    private void aprekinatCenu() {
+            switch (izmers) {
+                case "Small":
+                	pamatnesCena = 5.0;
+                    break;
+                case "Medium":
+                	pamatnesCena = 7.0;
+                    break;
+                case "Large":
+                	pamatnesCena = 9.0;
+                    break;
+                default:
+                	pamatnesCena = 0.0;
+                    break;
+            }
+            topsCena = tops.size()*1.5;
+            sauceCena = sauce.size()*0.5;
+        }
+	    public String getPicasName() {
+	    	return picasName;
+	    }
 		public String getIzmers() {
 			return izmers;
 		}
@@ -42,12 +51,23 @@ public class picaa {
 		public ArrayList<String> getSauce() {
 	        return sauce;
 	    }
-		public double getCena() {
-			return cena;
+		public double getPamatnesCena() {
+			return pamatnesCena;
 		}
+		public double getTopsCena() {
+	        return topsCena;
+	    }
+		public double getSauceCena() {
+	        return sauceCena;
+		}
+	    public double getKopaCena() {
+	        return pamatnesCena + topsCena + sauceCena;
+	    }
+	    
 		@Override
 	    public String toString() {
-	        return "Izmērs(diametrs cm): "+izmers+"\nPiedevas: "+tops+"\nMērce: "+sauce+"\nCena €: "+cena;
+	        return "Picas veids: "+picasName+"\nIzmērs(diametrs cm): "+izmers+
+	        	   "\nPiedevas: "+tops+"\nMērce: "+sauce+"\nCena €: "+getKopaCena();
 	    }
 	}
 		
@@ -56,12 +76,14 @@ public class picaa {
 		private String adrese;
 	    private String tel;
 	    private Pizza pica;
+	    private double piegade;
 	    
-	    public Pasutijums (String vards, String adrese, String tel, Pizza pica) {
+	    public Pasutijums (String vards, String adrese, String tel, Pizza pica, double piegade) {
 	        this.vards = vards;
 	        this.adrese = adrese;
 	        this.tel = tel;
 	        this.pica = pica;
+	        this.piegade = piegade;
 	    }
 	    
 	    public String getVards() {
@@ -76,6 +98,9 @@ public class picaa {
 	    public Pizza getPica() {
 	    	return pica;
 	    }
+	    public double getPiegade() {
+	    	return piegade;
+	    }
 	    
 	    @Override
 	    public String toString() {
@@ -84,11 +109,21 @@ public class picaa {
 	}
 	
 	public static void veiktPasutijumu() {
-		/*String vards = JOptionPane.showInputDialog("Ievadiet savu vārdu:");
+		/*double piegadesCena;
+		String vards = JOptionPane.showInputDialog("Ievadiet savu vārdu:");
         String adrese = JOptionPane.showInputDialog("Ievadiet savu mājas adrese, uz kuru sūtīt:");
         String telnum = JOptionPane.showInputDialog("Ievadiet savu tel.num:");
         
-        String[] izmeri = {"20 ∅","30 ∅","50 ∅"};*/
+        if(adrese.equalsIgnoreCase("uz vietas"))
+        	piegadesCena = 0;
+        else
+        	piegadesCena = 2;
+        
+        System.out.println(piegadesCena);
+        
+        String[] izmeri = {"20 ∅","30 ∅","50 ∅"};
+        String izmeruIzv = (String) JOptionPane.showInputDialog(null, "Select pizza size:", "Pizza Size",
+                JOptionPane.QUESTION_MESSAGE, null, izmeri, izmeri[0]);*/
 	}
 
 	public static void main(String[] args) {
