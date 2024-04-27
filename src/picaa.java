@@ -17,7 +17,6 @@ public class picaa {
 	        this.sauce = sauce;
 	        this.cena = aprekinatCenu();
 	    }
-
 			private double aprekinatCenu() {
 				double pamatne = 0;
 				switch(izmers) {
@@ -34,8 +33,24 @@ public class picaa {
 		        double saucesPrice = sauce.size()*0.5;
 		        return pamatne+toppingsPrice+saucesPrice;
 			}
+		public String getIzmers() {
+			return izmers;
+		}
+		public ArrayList<String> getTops() {
+	        return tops;
+	    }
+		public ArrayList<String> getSauce() {
+	        return sauce;
+	    }
+		public double getCena() {
+			return cena;
+		}
+		@Override
+	    public String toString() {
+	        return "Izmērs(diametrs cm): "+izmers+"\nPiedevas: "+tops+"\nMērce: "+sauce+"\nCena €: "+cena;
+	    }
+	}
 		
-	    
 	class Pasutijums{
 		private String vards;
 		private String adrese;
@@ -86,7 +101,7 @@ public class picaa {
     		
     		switch(izvele) {
     		case "Veikt pasūtījumu":
-    			//pasutit();
+    			//pasutit();   
     			break;
     			
     		case "Apskatīt pasūtījumus":
@@ -100,6 +115,5 @@ public class picaa {
     		
 		}while(!izvele.equals("Apturēt programmu"));
 
+		}
 	}
-	}
-}
