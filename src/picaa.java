@@ -21,6 +21,16 @@ public class picaa {
     		if(izvele == null)
     			izvele = "Apturēt programmu";
     		
+    		switch(izvele) {
+    		case "Veikt pasūtījumu":
+    			
+    			break;
+    			
+    		case "Apturēt programmu":
+    			JOptionPane.showMessageDialog(null, "Paldies, par pasūtījumu. Uzredzēšanos!");
+    			break;
+    		}
+    		
 		}while(!izvele.equals("Apturēt programmu"));
 		//beidz programmas darbību!!	
 
