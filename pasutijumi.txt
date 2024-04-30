@@ -1,0 +1,38 @@
+Vārds: viktorija
+Adrese: uz vietas
+Tel. num: 232323
+Pica: Picas veids: Margherita
+Izmērs(diametrs cm): 20 ∅
+Piedevas: []
+Mērce: []
+Cena €: 0.0
+Vārds: rgrgr
+Adrese: 4554
+Tel. num: ttt555
+Pica: Picas veids: Veģetārā
+Izmērs(diametrs cm): 50 ∅
+Piedevas: [tt]
+Mērce: []
+Cena €: 1.5
+Vārds: vika
+Adrese: uz vietas
+Tel. num: 94974932
+Pica: Picas veids: Margherita
+Izmērs(diametrs cm): 20 ∅
+Piedevas: null
+Mērce: null
+Cena €: 0.0
+Vārds: dhfjf
+Adrese: fdffd
+Tel. num: dfdfd
+Pica: Picas veids: Margherita
+Izmērs(diametrs cm): 20 ∅
+Piedevas: null
+Mērce: null
+Cena €: 0.0
+Vārds: ereer
+Adrese: 3332
+Tel. num: 3232
+Pica: Picas veids: Margherita
+Izmērs(diametrs cm): 20 ∅
+Cena €: 0.0

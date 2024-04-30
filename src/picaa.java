@@ -1,4 +1,9 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -10,14 +15,10 @@ public class picaa {
         private ArrayList<String> tops;
         private ArrayList<String> sauce;
         private double pamatnesCena;
-        private double topsCena;
-        private double sauceCena;
 
-        public Pizza(String picasName, String izmers, ArrayList<String> tops, ArrayList<String> sauce) {
+        public Pizza(String picasName, String izmers) {
             this.picasName = picasName;
             this.izmers = izmers;
-            this.tops = tops;
-            this.sauce = sauce;
             aprekinatCenu();
         }
 
@@ -36,8 +37,6 @@ public class picaa {
                     pamatnesCena = 0.0;
                     break;
             }
-            topsCena = tops.size() * 1.5;
-            sauceCena = sauce.size() * 0.5;
         }
 
         public String getPicasName() {
@@ -60,22 +59,14 @@ public class picaa {
             return pamatnesCena;
         }
 
-        public double getTopsCena() {
-            return topsCena;
-        }
-
-        public double getSauceCena() {
-            return sauceCena;
-        }
-
         public double getKopaCena() {
-            return pamatnesCena + topsCena + sauceCena;
+            return pamatnesCena;
         }
 
         @Override
         public String toString() {
             return "Picas veids: " + picasName + "\nIzmērs(diametrs cm): " + izmers +
-                    "\nPiedevas: " + tops + "\nMērce: " + sauce + "\nCena €: " + getKopaCena();
+            		"\nCena €: " + getKopaCena();
         }
     }
 
@@ -141,31 +132,13 @@ public class picaa {
         String izmeruIzv = (String) JOptionPane.showInputDialog(null, "Select pizza size:", "Pizza Size",
                 JOptionPane.QUESTION_MESSAGE, null, izmeri, izmeri[0]);
 
-        ArrayList<String> piedevasssss = new ArrayList<>();
-        if (JOptionPane.showConfirmDialog(null, "Vai vēlaties papildus piedevas", "Extra piedevas?", JOptionPane.YES_NO_OPTION)
-                == JOptionPane.YES_OPTION) {
-            while (true) {
-                String topping = JOptionPane.showInputDialog("Ievadi kādas piedevas klāt vēlies:"
-                        + "\nRaksti stop, lai turpinātu ar pasūtījumu");
-                if (topping.equalsIgnoreCase("stop")) break;
-                piedevasssss.add(topping);
-            }
-        }
+        
 
-        ArrayList<String> namMerce = new ArrayList<>();
-        if (JOptionPane.showConfirmDialog(null, "Vai vēlaties klāt kādu mērci?", "Extra mērce?", JOptionPane.YES_NO_OPTION)
-                == JOptionPane.YES_OPTION) {
-            while (true) {
-                String topping = JOptionPane.showInputDialog("Ievadi kādu mērci vēlaties:"
-                        + "\nRaksti stop, lai turpinātu ar pasūtījumu");
-                if (topping.equalsIgnoreCase("stop")) break;
-                namMerce.add(topping);
-            }
-        }
-
-        Pizza piza = new Pizza(picaName, izmeruIzv, piedevasssss, namMerce);
+        Pizza piza = new Pizza(picaName, izmeruIzv);
         Pasutijums order = new Pasutijums(vards, adrese, telnum, piza, piegadesCena);
         orders.add(order);
+        
+        saglabatFaila(order);
 
         JOptionPane.showMessageDialog(null, "Veicam Jūsu pasūtījumu!", "Vika's Pizzeria.", JOptionPane.INFORMATION_MESSAGE);
 
@@ -180,6 +153,25 @@ public class picaa {
         		message.append(order).append("\n");
         }
         	JOptionPane.showMessageDialog(null, message.toString());
+        }
+    }
+    
+    public static void saglabatFaila(Pasutijums order) {
+        try {
+            FileWriter writer = new FileWriter("pasutijumi.txt", true);
+            writer.write(order.toString() + "\n");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public static void apskatitPasutijumuFaila() {
+        try {
+            String content = new String(Files.readAllBytes(Paths.get("pasutijumi.txt")));
+            JOptionPane.showMessageDialog(null, content, "Visi pasūtījumi", JOptionPane.INFORMATION_MESSAGE);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
     
