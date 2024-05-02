@@ -143,7 +143,6 @@ public class picaa {
 
         Pizza piza = new Pizza(picaName, izmeruIzv);
 
-        // Pievieno papildus piedevas
         double papildusCena = 0.0;
         String[] piedevas = {"Sēnes", "Sīpoli", "Siers"};
         int res = JOptionPane.showConfirmDialog(null,"Vai vēlaties papildus piedevas?", "Piedevas",
@@ -195,7 +194,7 @@ public class picaa {
 
     public static void apskatitPas() {
         if(orders.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Nav veikts neviens pasūtījums.");
+            JOptionPane.showMessageDialog(null, "Nav Pasūtījumu.", "",JOptionPane.WARNING_MESSAGE);
         } else {
             JTextArea textArea = new JTextArea(20, 40);
             textArea.setEditable(false);
@@ -209,7 +208,7 @@ public class picaa {
             textArea.setText(message.toString());
 
             JScrollPane scrollPane = new JScrollPane(textArea);
-            JOptionPane.showMessageDialog(null, scrollPane, "Pasūtījumu apskate", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, scrollPane, "Pasūtījumi", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
@@ -237,7 +236,7 @@ public class picaa {
     public static void main(String[] args) {
         ImageIcon vikasPizzeria = new ImageIcon(picaa.class.getResource("/img/vikasPizzeria.png"));
         String izvele;
-        String[] saakums = {"Veikt pasūtījumu", "Apskatīt pasūtījumus", "Apturēt programmu"};
+        String[] saakums = {"Veikt pasūtījumu", "Apskatīt pasūtījumus","Apkalpot klientu", "Apturēt programmu"};
 
         JOptionPane.showMessageDialog(null, "", "Laipni lūgti.. ",
                 JOptionPane.QUESTION_MESSAGE, vikasPizzeria);
@@ -254,6 +253,23 @@ public class picaa {
                     break;
                 case "Apskatīt pasūtījumus":
                     apskatitPas();
+                    break;
+                case "Apkalpot klientu":
+                    if (!orders.isEmpty()) {
+                        orders.remove(0);
+                        try {
+                            FileWriter writer = new FileWriter("pasutijumi.txt");
+                            for (Pasutijums order : orders) {
+                                writer.write(order.toString() + "\n");
+                            }
+                            writer.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        JOptionPane.showMessageDialog(null, "Klients apkalpots!", "Apkalpošana", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Nav veikts neviens pasūtījums.", "Nav pasūtījumu", JOptionPane.WARNING_MESSAGE);
+                    }
                     break;
                 case "Apturēt programmu":
                     JOptionPane.showMessageDialog(null, "Paldies, par pasūtījumu. Uzredzēšanos!");
