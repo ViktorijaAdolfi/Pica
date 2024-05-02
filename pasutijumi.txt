@@ -36,3 +36,61 @@ Tel. num: 3232
 Pica: Picas veids: Margherita
 Izmērs(diametrs cm): 20 ∅
 Cena €: 0.0
+Vārds: viktorija
+Adrese: uz vietas
+Tel. num: 23456789
+Pica: Picas veids: Margherita
+Izmērs(diametrs cm): 20 ∅
+Cena €: 0.0
+Vārds: 
+Adrese: ksk
+Tel. num: 32323
+Pica: Picas veids: Margherita
+Izmērs(diametrs cm): Small
+Cena €: 5.0
+Vārds: 2.
+Adrese: uz vietas
+Tel. num: 232323
+Pica: Picas veids: Margherita
+Izmērs(diametrs cm): Small
+Cena €: 5.0
+Vārds: fdvsf
+Adrese: dakdakdsa
+Tel. num: 234567
+Pica: Picas veids: Pepperoni
+Izmērs(diametrs cm): Medium
+Cena €: 7.0
+Vārds: ewwe
+Adrese: uz vietas
+Tel. num: 333333
+Pica: Picas veids: Margherita
+Izmērs(diametrs cm): Small
+Cena €: 5.0
+Vārds: kdkdc
+Adrese: 2345
+Tel. num: 2345679
+Pica: Picas veids: Margherita
+Izmērs(diametrs cm): Large
+Cena €: 9.0
+Vārds: 23
+Adrese: kkaksks
+Tel. num: 23456789
+Pica: Picas veids: Margherita
+Izmērs(diametrs cm): Small
+Cena €: 5.0
+Vārds: jasksj
+Adrese: saaskj
+Tel. num: 574893
+Pica: Picas veids: Margherita
+Izmērs(diametrs cm): Small
+Cena €: 5.0
+Piegādes cena €: 2.0
+Kopējā cena €: 7.0
+Vārds: ewewe
+Adrese: uz vietas
+Tel. num: 22223222
+Pica: Picas veids: Margherita
+Izmērs(diametrs cm): Medium
+Cena €: 7.0
+Piegādes cena €: 0.0
+Kopējā cena €: 7.0

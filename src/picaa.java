@@ -12,8 +12,6 @@ public class picaa {
     static class Pizza {
         private String picasName;
         private String izmers;
-        private ArrayList<String> tops;
-        private ArrayList<String> sauce;
         private double pamatnesCena;
 
         public Pizza(String picasName, String izmers) {
@@ -47,14 +45,6 @@ public class picaa {
             return izmers;
         }
 
-        public ArrayList<String> getTops() {
-            return tops;
-        }
-
-        public ArrayList<String> getSauce() {
-            return sauce;
-        }
-
         public double getPamatnesCena() {
             return pamatnesCena;
         }
@@ -66,7 +56,7 @@ public class picaa {
         @Override
         public String toString() {
             return "Picas veids: " + picasName + "\nIzmērs(diametrs cm): " + izmers +
-            		"\nCena €: " + getKopaCena();
+                    "\nCena €: " + getKopaCena();
         }
     }
 
@@ -105,9 +95,14 @@ public class picaa {
             return piegade;
         }
 
+        public double getKopaCena() {
+            return pica.getKopaCena() + piegade; // Pievieno piegādes cenu kopējai summai
+        }
+
         @Override
         public String toString() {
-            return "Vārds: " + vards + "\nAdrese: " + adrese + "\nTel. num: " + tel + "\nPica: " + pica;
+            return "Vārds: " + vards + "\nAdrese: " + adrese + "\nTel. num: " + tel + "\nPica: " + pica +
+                    "\nPiegādes cena €: " + piegade + "\nKopējā cena €: " + getKopaCena();
         }
     }
 
@@ -118,9 +113,9 @@ public class picaa {
         String telnum = JOptionPane.showInputDialog("Ievadiet savu tel.num:");
 
         if (adrese.equalsIgnoreCase("uz vietas"))
-            piegadesCena = 0;
+            piegadesCena = 0.0;
         else
-            piegadesCena = 2;
+            piegadesCena = 2.0;
 
         System.out.println(piegadesCena);
 
@@ -128,34 +123,32 @@ public class picaa {
         String picaName = (String) JOptionPane.showInputDialog(null, "Izvēlies picas veidu:", "Menu",
                 JOptionPane.QUESTION_MESSAGE, null, pizzas, pizzas[0]);
 
-        String[] izmeri = {"20 ∅", "30 ∅", "50 ∅"};
+        String[] izmeri = {"Small", "Medium", "Large"};
         String izmeruIzv = (String) JOptionPane.showInputDialog(null, "Select pizza size:", "Pizza Size",
                 JOptionPane.QUESTION_MESSAGE, null, izmeri, izmeri[0]);
-
-        
 
         Pizza piza = new Pizza(picaName, izmeruIzv);
         Pasutijums order = new Pasutijums(vards, adrese, telnum, piza, piegadesCena);
         orders.add(order);
-        
+
         saglabatFaila(order);
 
         JOptionPane.showMessageDialog(null, "Veicam Jūsu pasūtījumu!", "Vika's Pizzeria.", JOptionPane.INFORMATION_MESSAGE);
 
     }
-    
+
     public static void apskatitPas() {
         if(orders.isEmpty()) {
-        	JOptionPane.showMessageDialog(null, "Nav veikts neviens pasūtījums.");
+            JOptionPane.showMessageDialog(null, "Nav veikts neviens pasūtījums.");
         } else {
-        	StringBuilder message = new StringBuilder("Pasūtījumi:\n");
-        	for (Pasutijums order : orders) {
-        		message.append(order).append("\n");
-        }
-        	JOptionPane.showMessageDialog(null, message.toString());
+            StringBuilder message = new StringBuilder("Pasūtījumi:\n");
+            for (Pasutijums order : orders) {
+                message.append(order).append("\n");
+            }
+            JOptionPane.showMessageDialog(null, message.toString());
         }
     }
-    
+
     public static void saglabatFaila(Pasutijums order) {
         try {
             FileWriter writer = new FileWriter("pasutijumi.txt", true);
@@ -165,7 +158,7 @@ public class picaa {
             e.printStackTrace();
         }
     }
-    
+
     public static void apskatitPasutijumuFaila() {
         try {
             String content = new String(Files.readAllBytes(Paths.get("pasutijumi.txt")));
@@ -174,7 +167,7 @@ public class picaa {
             e.printStackTrace();
         }
     }
-    
+
     private static ArrayList<Pasutijums> orders = new ArrayList<>();
 
     public static void main(String[] args) {
