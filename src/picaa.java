@@ -290,7 +290,7 @@ public class picaa {
                     }
                     break;
                 case "Apturēt programmu":
-                    JOptionPane.showMessageDialog(null, "Paldies, par pasūtījumu. Uzredzēšanos!", "",JOptionPane.ERROR_MESSAGE,pizza);
+                    JOptionPane.showMessageDialog(null, "Paldies, par pasūtījumu. Uzredzēšanos!", "Byeee!!",JOptionPane.ERROR_MESSAGE,pizza);
                     break;
             }
         } while (!izvele.equals("Apturēt programmu"));
