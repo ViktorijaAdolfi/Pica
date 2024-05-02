@@ -1,5 +1,7 @@
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -61,12 +63,8 @@ public class picaa {
 
         @Override
         public String toString() {
-            String piedevasTeksts = "";
-            if (papildusPiedevas != null) {
-                piedevasTeksts = "\nPapildus piedevas: " + papildusPiedevas;
-            }
             return "Picas veids: " + picasName + "\nIzmērs(diametrs cm): " + izmers +
-                    "\nCena €: " + getKopaCena() + piedevasTeksts;
+                    "\nCena €: " + getKopaCena();
         }
     }
 
@@ -132,6 +130,7 @@ public class picaa {
             piegadesCena = 2.0;
 
         System.out.println(piegadesCena);
+        
 
         String[] pizzas = {"Margherita", "Pepperoni", "Veģetārā", "Hawaiian", "Meat Lovers"};
         String picaName = (String) JOptionPane.showInputDialog(null, "Izvēlies picas veidu:", "Menu",
@@ -142,11 +141,19 @@ public class picaa {
                 JOptionPane.QUESTION_MESSAGE, null, izmeri, izmeri[0]);
 
         Pizza piza = new Pizza(picaName, izmeruIzv);
-
+        
         double papildusCena = 0.0;
         String[] piedevas = {"Sēnes", "Sīpoli", "Siers"};
+        
+  		  ImageIcon bilde1 = new ImageIcon("https://static.wikia.nocookie.net/fliplinestudios/images/b/ba/Mushroom_Pizzeria_HD.png/revision/latest/scale-to-width-down/220?cb=20170807090951");
+          piedevas[0] = "<html><body><img width='100' height='100' src='" + bilde1 + "'></body></html>";
+          ImageIcon bilde2 = new ImageIcon("https://b.thumbs.redditmedia.com/_plclbTLaVBkt8SdweAQFfOPQqAojsfRdRssDSNrpBY.png");
+          piedevas[1] = "<html><body><img width='100' height='100' src='" + bilde2 + "'></body></html>";
+          ImageIcon bilde3 = new ImageIcon("https://static.wikia.nocookie.net/fliplinestudios/images/4/4e/Unlocking_provolone_cheese.jpg/revision/latest/smart/width/250/height/250?cb=20150612154216");
+          piedevas[2] = "<html><body><img width='100' height='100' src='" + bilde3 + "'></body></html>";
+          
         int res = JOptionPane.showConfirmDialog(null,"Vai vēlaties papildus piedevas?", "Piedevas",
-        	      JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null);
+        	      JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE);
         	if(res == 0) {
         		System.out.println("YES");
         		int choice = JOptionPane.showOptionDialog(null, "Izvēlaties papildus piedevas!", "Piedevas",
@@ -162,6 +169,14 @@ public class picaa {
         	
         double mercesCena = 0.0;
         String[] merces = {"Kečups", "Ķiploku mērce", "Majonēze"};
+        
+        ImageIcon bilde4 = new ImageIcon("https://static.wikia.nocookie.net/fliplinestudios/images/3/32/KetchupBottleBurgeriaHD.png/revision/latest?cb=20230610135252");
+        merces[0] = "<html><body><img width='100' height='100' src='" + bilde4 + "'></body></html>";
+        ImageIcon bilde5 = new ImageIcon("https://static.wikia.nocookie.net/faefarm/images/c/cc/Garlic.png/revision/latest?cb=20230926153212");
+        merces[1] = "<html><body><img width='100' height='100' src='" + bilde5 + "'></body></html>";
+        ImageIcon bilde6 = new ImageIcon("https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_fit,f_auto,h_480,q_auto,w_480/d_ecommerce:backend-fallback.png/MAT_212319_PCE_LV");
+        merces[2] = "<html><body><img width='100' height='100' src='" + bilde6 + "'></body></html>";
+        
         int res2 = JOptionPane.showConfirmDialog(null,"Vai vēlaties mērci klāt?", "Mērces",
             	      JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null);
         	if(res2 == 0) {
@@ -233,7 +248,10 @@ public class picaa {
 
     private static ArrayList<Pasutijums> orders = new ArrayList<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MalformedURLException{
+    	
+    	final ImageIcon pizza = new ImageIcon(new URL("https://www4.minijuegosgratis.com/v3/games/thumbnails/202095_1.jpg"));
+    	final ImageIcon starts = new ImageIcon(new URL("https://media.tenor.com/ZzMG3GSJdbQAAAAM/papa-louie-cooking.gif"));
         ImageIcon vikasPizzeria = new ImageIcon(picaa.class.getResource("/img/vikasPizzeria.png"));
         String izvele;
         String[] saakums = {"Veikt pasūtījumu", "Apskatīt pasūtījumus","Apkalpot klientu", "Apturēt programmu"};
@@ -243,7 +261,7 @@ public class picaa {
 
         do {
             izvele = (String) JOptionPane.showInputDialog(null, "Izvēlies darbību!", "Start!",
-                    JOptionPane.QUESTION_MESSAGE, null, saakums, saakums[0]);
+                    JOptionPane.QUESTION_MESSAGE, starts, saakums, saakums[0]);
             if (izvele == null)
                 izvele = "Apturēt programmu";
 
@@ -272,7 +290,7 @@ public class picaa {
                     }
                     break;
                 case "Apturēt programmu":
-                    JOptionPane.showMessageDialog(null, "Paldies, par pasūtījumu. Uzredzēšanos!");
+                    JOptionPane.showMessageDialog(null, "Paldies, par pasūtījumu. Uzredzēšanos!", "",JOptionPane.ERROR_MESSAGE,pizza);
                     break;
             }
         } while (!izvele.equals("Apturēt programmu"));

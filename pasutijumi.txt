@@ -1,0 +1,8 @@
+Vārds: qert
+Adrese: uz vietas
+Tel. num: 21345678
+Picas veids: Margherita
+Izmērs(diametrs cm): Small
+Cena €: 5.0
+Papildus izmaksas €: 3.0
+Kopējā cena €: 8.0
