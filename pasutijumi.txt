@@ -94,3 +94,128 @@ Izmērs(diametrs cm): Medium
 Cena €: 7.0
 Piegādes cena €: 0.0
 Kopējā cena €: 7.0
+Vārds: fff
+Adrese: uz vietas
+Tel. num: 456789
+Pica: Picas veids: Veģetārā
+Izmērs(diametrs cm): Small
+Cena €: 5.0
+Piegādes cena €: 0.0
+Kopējā cena €: 5.0
+Vārds: dnewkjeld
+Adrese: kscksf
+Tel. num: 3456789
+Pica: Picas veids: Veģetārā
+Izmērs(diametrs cm): Large
+Cena €: 9.0
+Piegādes cena €: 2.0
+Kopējā cena €: 11.0
+Vārds: kjdskjd
+Adrese: kkk
+Tel. num: 8738474837
+Pica: Picas veids: Meat Lovers
+Izmērs(diametrs cm): Medium
+Cena €: 7.0
+Piegādes cena €: 2.0
+Kopējā cena €: 9.0
+Vārds: jdd
+Adrese: uz vietas
+Tel. num: 123
+Pica: Picas veids: Pepperoni
+Izmērs(diametrs cm): Small
+Cena €: 5.0
+Piegādes cena €: 0.0
+Kopējā cena €: 5.0
+Vārds: siid
+Adrese: uz vietas
+Tel. num: 23456789
+Pica: Picas veids: Veģetārā
+Izmērs(diametrs cm): Small
+Cena €: 5.0
+Piegādes cena €: 0.0
+Kopējā cena €: 5.0
+Vārds: sd
+Adrese: sd
+Tel. num: 21345678
+Picas veids: Picas veids: Margherita
+Izmērs(diametrs cm): Small
+Cena €: 5.0
+Piegādes cena €: 2.0
+Kopējā cena €: 7.0
+Vārds: dkjf
+Adrese: uz vietas
+Tel. num: 21345678
+Picas veids: Margherita
+Izmērs(diametrs cm): Small
+Cena €: 5.0
+Piegādes cena €: 0.0
+Kopējā cena €: 5.0
+Vārds: kksskks
+Adrese: uz vietas
+Tel. num: 21345678
+Picas veids: Margherita
+Izmērs(diametrs cm): Small
+Cena €: 5.0
+Papildus piedevas: Siers
+Piegādes cena €: 2.0
+Kopējā cena €: 7.0
+Vārds: ds
+Adrese: ragh
+Tel. num: 21345678
+Picas veids: Margherita
+Izmērs(diametrs cm): Medium
+Cena €: 7.0
+Papildus piedevas: Sēnes
+Piegādes cena €: 4.0
+Kopējā cena €: 11.0
+Vārds: sd
+Adrese: w
+Tel. num: 21345678
+Picas veids: Margherita
+Izmērs(diametrs cm): Small
+Cena €: 5.0
+Piegādes cena €: 2.0
+Kopējā cena €: 7.0
+Vārds: esd
+Adrese: dsx
+Tel. num: 21345678
+Picas veids: Margherita
+Izmērs(diametrs cm): Small
+Cena €: 5.0
+Piegādes cena €: 2.0
+Kopējā cena €: 7.0
+Vārds: ew
+Adrese: uz vietas
+Tel. num: 21345678
+Picas veids: Margherita
+Izmērs(diametrs cm): Small
+Cena €: 5.0
+Piegādes cena €: 0.0
+Kopējā cena €: 5.0
+Vārds: wqq
+Adrese: wsa
+Tel. num: 21345678
+Picas veids: Pepperoni
+Izmērs(diametrs cm): Large
+Cena €: 9.0
+Papildus piedevas: Sēnes
+Piegādes cena €: 4.0
+Kopējā cena €: 13.0
+Vārds: sd
+Adrese: sd
+Tel. num: 21345678
+Picas veids: Margherita
+Izmērs(diametrs cm): Small
+Cena €: 5.0
+Papildus piedevas: Sīpoli
+Papildus izmaksas €: 4.0
+Kopējā cena €: 9.0
+Vārds: wed
+Adrese: ja
+Tel. num: 21345678
+Picas veids: Margherita
+Izmērs(diametrs cm): Small
+Cena €: 5.0
+Papildus piedevas: Kečups
+Papildus izmaksas €: 6.0
+Kopējā cena €: 11.0
