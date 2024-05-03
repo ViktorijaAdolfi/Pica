@@ -18,7 +18,7 @@ public class picaa {
         private double pamatnesCena;
         private String papildusPiedevas;
 
-        public Pizza(String picasName, String izmers) {
+        public Pizza(String picasName, String izmers, String papildusPiedevas) {
             this.picasName = picasName;
             this.izmers = izmers;
             aprekinatCenu();
@@ -140,7 +140,7 @@ public class picaa {
         String izmeruIzv = (String) JOptionPane.showInputDialog(null, "Select pizza size:", "Pizza Size",
                 JOptionPane.QUESTION_MESSAGE, null, izmeri, izmeri[0]);
 
-        Pizza piza = new Pizza(picaName, izmeruIzv);
+        Pizza piza = new Pizza(picaName, izmeruIzv, null);
         
         double papildusCena = 0.0;
         String[] piedevas = {"Sēnes", "Sīpoli", "Siers"};
@@ -216,9 +216,9 @@ public class picaa {
             textArea.setLineWrap(true);
             textArea.setWrapStyleWord(true);
 
-            StringBuilder message = new StringBuilder("Pasūtījumi:\n");
+            StringBuilder message = new StringBuilder("__________________Pasūtījumi__________________\n");
             for (Pasutijums order : orders) {
-                message.append(order).append("\n");
+                message.append(order).append("\n________________________________________________________\n");
             }
             textArea.setText(message.toString());
 
