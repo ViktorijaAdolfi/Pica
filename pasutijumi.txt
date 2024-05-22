@@ -1,28 +1,52 @@
-Vārds: kys
-Adrese: kys
+Vārds: kkjkj
+Adrese: kkk
 Tel. num: 21345678
-Picas veids: Meat Lovers
-Izmērs(diametrs cm): Medium
-Cena €: 7.0
+Picas veids: Margherita
+Izmērs(diametrs cm): Small
+Cena €: 5.0
 Papildus izmaksas €: 5.0
-Kopējā cena €: 12.0
-Vārds: kys
-Adrese: www
+Kopējā cena €: 10.0
+Vārds: dd
+Adrese: kkk
 Tel. num: 21345678
 Picas veids: Margherita
 Izmērs(diametrs cm): Small
 Cena €: 5.0
-Papildus izmaksas €: 2.0
-Kopējā cena €: 7.0
-Vārds: fafafwe
-Adrese: kys
+Papildus izmaksas €: 5.0
+Kopējā cena €: 10.0
+Vārds: sfd
+Adrese: kkk
 Tel. num: 21345678
 Picas veids: Margherita
 Izmērs(diametrs cm): Small
 Cena €: 5.0
-Papildus izmaksas €: 2.0
-Kopējā cena €: 7.0
-Vārds: trt
+Papildus izmaksas €: 5.0
+Kopējā cena €: 10.0
+Vārds: wserwr
+Adrese: wee
+Tel. num: 21345678
+Picas veids: Margherita
+Izmērs(diametrs cm): Small
+Cena €: 5.0
+Papildus izmaksas €: 5.0
+Kopējā cena €: 10.0
+Vārds: dada
+Adrese: uz vietas
+Tel. num: 21345678
+Picas veids: Margherita
+Izmērs(diametrs cm): Small
+Cena €: 5.0
+Papildus izmaksas €: 3.0
+Kopējā cena €: 8.0
+Vārds: ass
+Adrese: kkk
+Tel. num: 21345678
+Picas veids: Margherita
+Izmērs(diametrs cm): Small
+Cena €: 5.0
+Papildus izmaksas €: 5.0
+Kopējā cena €: 10.0
+Vārds: kook
 Adrese: kkk
 Tel. num: 21345678
 Picas veids: Margherita
